@@ -13,6 +13,8 @@ RUN bitnami-pkg install node-14.17.0-0 --checksum 445d6ffbde4c69c382f1d1614f014f
 RUN bitnami-pkg install tini-0.19.0-1 --checksum 9b1f1c095944bac88a62c1b63f3bff1bb123aa7ccd371c908c0e5b41cec2528d
 RUN bitnami-pkg install laravel-8.5.19-0 --checksum 1d6a06d0858477298af9c29b31d45cf9ce4ccb202fbf69db7160f6a9ab3b9fde
 RUN bitnami-pkg install gosu-1.12.0-2 --checksum 4d858ac600c38af8de454c27b7f65c0074ec3069880cb16d259a6e40a46bbc50
+// upgrade composer to version 2
+RUN sudo composer self-update --2
 RUN mkdir /app && chown bitnami:bitnami /app
 
 COPY rootfs /
